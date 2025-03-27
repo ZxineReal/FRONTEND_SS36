@@ -20,40 +20,53 @@
         background-color: #f4f4f4;
         display: flex;
         justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
       }
+
       .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 100vh;
+        max-width: 800px;
         padding: 20px;
       }
+
       .card-container {
         display: flex;
         flex-direction: column;
-        width: 30%;
-        padding: 20px;
         align-items: center;
         gap: 20px;
+        width: 100%;
       }
+
       .card {
         display: flex;
         gap: 20px;
         background-color: white;
         padding: 20px;
         border-radius: 8px;
-        width: 450px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
       }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
       .card .img {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 200px;
-        height: 150px;
+        width: 180px;
+        height: 130px;
         border-radius: 8px;
       }
+
       .img1 {
         background-image: url("https://i2.ex-cdn.com/crystalbay.com/files/content/2024/08/15/bun-bo-hue-6-0935.jpeg");
       }
@@ -70,27 +83,34 @@
         gap: 10px;
         flex-wrap: wrap;
       }
+
       .vote {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
+        flex-wrap: nowrap;
       }
+
       .material-symbols-outlined {
         color: red;
+        font-size: 24px;
       }
+
       .btn-fav {
-        background-color: #28a745;
-        border: 1px solid #28a745;
+        background-color: #ff4757;
+        border: none;
         color: white;
-        border-radius: 4px;
-        transition: all 0.15s linear;
-        width: 90px;
-        height: 35px;
-      }
-      .btn-fav:hover {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
         cursor: pointer;
-        opacity: 0.8;
-        transform: translateY(-3px);
+        transition: all 0.3s ease;
+      }
+
+      .btn-fav:hover {
+        background-color: #e84118;
+        transform: scale(1.1);
       }
     </style>
   </head>
@@ -102,10 +122,7 @@
           <div class="img img1"></div>
           <div class="card-content">
             <h2>Bún bò Huế</h2>
-            <span id="vote1" class="vote"
-              ><span class="material-symbols-outlined"> favorite </span>0 lượt
-              thích</span
-            >
+            <span id="vote1" class="vote"></span>
             <button id="btn1" class="btn-fav">Thích +1</button>
           </div>
         </div>
@@ -113,10 +130,7 @@
           <div class="img img2"></div>
           <div class="card-content">
             <h2>Phở bò Hà Nội</h2>
-            <span id="vote2" class="vote"
-              ><span class="material-symbols-outlined"> favorite </span>0 lượt
-              thích</span
-            >
+            <span id="vote2" class="vote"></span>
             <button id="btn2" class="btn-fav">Thích +1</button>
           </div>
         </div>
@@ -124,10 +138,7 @@
           <div class="img img3"></div>
           <div class="card-content">
             <h2>Cơm tấm Sài Gòn</h2>
-            <span class="vote"
-              ><span id="vote3" class="material-symbols-outlined"> favorite </span>0 lượt
-              thích</span
-            >
+            <span id="vote3" class="vote"></span>
             <button id="btn3" class="btn-fav">Thích +1</button>
           </div>
         </div>
